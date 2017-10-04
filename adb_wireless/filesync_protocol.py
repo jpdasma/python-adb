@@ -207,6 +207,8 @@ class FileSyncConnection(object):
   def _Flush(self):
     try:
       self.adb.Write(self.send_buffer[:self.send_idx])
+    except:
+      pass
     self.send_idx = 0
 
   def _ReadBuffered(self, size):

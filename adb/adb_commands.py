@@ -29,6 +29,7 @@ import socket
 from adb import adb_protocol
 from adb import common
 from adb import filesync_protocol
+from adb import exceptions
 
 # From adb.h
 CLASS = 0xFF
@@ -56,7 +57,7 @@ class AdbCommands(object):
 
   @classmethod
   def ConnectDevice(
-      cls, port_path=None, serial=None, default_timeout_ms=None, **kwargs):
+          cls, serial='127.0.0.1:5555', default_timeout_ms=None, **kwargs):
     """Convenience function to get an adb device from usb path or serial.
 
     Args:
@@ -70,9 +71,7 @@ class AdbCommands(object):
     if serial and b':' in serial:
         handle = common.TcpHandle(serial)
     else:
-        handle = common.UsbHandle.FindAndOpen(
-            DeviceIsAvailable, port_path=port_path, serial=serial,
-            timeout_ms=default_timeout_ms)
+        raise exceptions.WrongIpPortSyntax("Serial must be in form of 'ipaddress:port'")
     return cls.Connect(handle, **kwargs)
 
   def __init__(self, handle, device_state):
@@ -104,7 +103,7 @@ class AdbCommands(object):
   @classmethod
   def Devices(cls):
     """Get a generator of UsbHandle for devices available."""
-    return common.UsbHandle.FindDevices(DeviceIsAvailable)
+    return None
 
   def GetState(self):
     return self._device_state

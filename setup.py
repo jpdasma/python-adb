@@ -15,13 +15,11 @@
 from setuptools import setup
 
 setup(
-    name = 'adb',
-    packages = ['adb'],
+    name = 'adb_wireless',
+    packages = ['adb_wireless'],
     version = '1.2.0',
     author = 'Fahrzin Hemmati',
     author_email = 'fahhem@gmail.com',
-    maintainer = 'Fahrzin Hemmati',
-    maintainer_email = 'fahhem@google.com',
     url = 'https://github.com/google/python-adb',
     description = 'A pure python implementation of the Android ADB and Fastboot protocols',
     long_description = '''
@@ -41,13 +39,9 @@ communicates with a device that it wasn't intended to, unlike the
 Android project's ADB.
 ''',
 
-    keywords = ['android', 'adb', 'fastboot'],
+    keywords = ['android', 'adb'],
 
-    install_requires = ['libusb1>=1.0.16', 'M2Crypto>=0.21.1'],
-
-    extra_requires = {
-        'fastboot': 'progressbar>=2.3'
-    },
+    install_requires = ['M2Crypto>=0.21.1'],
 
 ## classifier list https://pypi.python.org/pypi?:action=list_classifiers
     classifiers = [

@@ -1,0 +1,2 @@
+class WrongIpPortSyntax(Exception):
+    pass

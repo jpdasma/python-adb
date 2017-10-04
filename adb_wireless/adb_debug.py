@@ -27,7 +27,7 @@ from adb_wireless import adb_commands
 from adb_wireless import common_cli
 
 try:
-  from adb import sign_m2crypto
+  from adb_wireless import sign_m2crypto
   rsa_signer = sign_m2crypto.M2CryptoSigner
 except ImportError:
   try:

@@ -20,7 +20,7 @@ import socket
 import threading
 import weakref
 
-from adb import usb_exceptions
+from adb_wireless import usb_exceptions
 
 DEFAULT_TIMEOUT_MS = 1000
 

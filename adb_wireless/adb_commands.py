@@ -26,10 +26,10 @@ import io
 import os
 import socket
 
-from adb import adb_protocol
-from adb import common
-from adb import filesync_protocol
-from adb import exceptions
+from adb_wireless import adb_protocol
+from adb_wireless import common
+from adb_wireless import filesync_protocol
+from adb_wireless import exceptions
 
 # From adb.h
 CLASS = 0xFF

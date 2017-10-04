@@ -23,8 +23,8 @@ import stat
 import sys
 import time
 
-from adb import adb_commands
-from adb import common_cli
+from adb_wireless import adb_commands
+from adb_wireless import common_cli
 
 try:
   from adb import sign_m2crypto

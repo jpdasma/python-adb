@@ -20,7 +20,7 @@ host side.
 import struct
 import time
 
-from adb import usb_exceptions
+from adb_wireless import usb_exceptions
 
 
 # Maximum amount of data in an ADB packet.
